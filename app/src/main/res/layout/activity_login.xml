@@ -11,12 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/logotipo"
-        app:layout_constraintBottom_toTopOf="@id/nome_usuario"
+        app:layout_constraintBottom_toTopOf="@id/edit_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/nome_usuario"
+        android:id="@+id/edit_login"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -24,17 +24,17 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/bg_edittext_normal"
         android:ems="10"
-        android:hint="Nome de Usuário"
+        android:hint="Login"
         android:imeOptions="actionDone"
         android:inputType="textPersonName"
         android:paddingStart="18dp"
         android:paddingEnd="18dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/senha_usuario" />
+        app:layout_constraintBottom_toTopOf="@id/edit_senha" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/senha_usuario"
+        android:id="@+id/edit_senha"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"

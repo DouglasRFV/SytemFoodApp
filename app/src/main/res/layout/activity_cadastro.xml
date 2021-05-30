@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/nome_usuario"
+        android:id="@+id/edit_usuario"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -33,10 +33,10 @@
         android:paddingEnd="18dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/senha_usuario" />
+        app:layout_constraintBottom_toTopOf="@id/edit_senha" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/senha_usuario"
+        android:id="@+id/edit_senha"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
