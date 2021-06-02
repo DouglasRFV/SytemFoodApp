@@ -2,17 +2,14 @@ package com.example.systemfoodapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatEditText;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -106,11 +103,11 @@ public class LoginActivity extends AppCompatActivity {
                                int tipoUsuario = jsonObject.getInt("tipoUsuario");
 
                                if(tipoUsuario == 1) {
-                                   Intent tela = new Intent(LoginActivity.this, MainActivity.class);
+                                   Intent tela = new Intent(LoginActivity.this, MenuAdminActivity.class);
                                    startActivity(tela);
                                    finish();
                                } else if(tipoUsuario == 2){
-                                   Intent tela = new Intent(LoginActivity.this, ClienteDescontoActivity.class);
+                                   Intent tela = new Intent(LoginActivity.this, MenuActivity.class);
                                    startActivity(tela);
                                    finish();
                                }

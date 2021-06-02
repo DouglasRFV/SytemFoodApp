@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="#FFFFFF"
-    tools:context=".MainActivity">
+    tools:context=".MenuActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="wrap_content"
@@ -24,14 +24,16 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/bg_edittext_normal"
         android:ems="10"
-        android:hint="Login"
+        android:hint="@string/login"
         android:imeOptions="actionDone"
         android:inputType="textPersonName"
         android:paddingStart="18dp"
         android:paddingEnd="18dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/edit_senha" />
+        app:layout_constraintBottom_toTopOf="@id/edit_senha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edit_senha"
@@ -42,14 +44,16 @@
         android:layout_marginBottom="30dp"
         android:background="@drawable/bg_edittext_normal"
         android:ems="10"
-        android:hint="Senha"
+        android:hint="@string/senha"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:paddingStart="18dp"
         android:paddingEnd="18dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/btn_login" />
+        app:layout_constraintBottom_toTopOf="@id/btn_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login"
@@ -59,7 +63,7 @@
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/bg_button_login"
-        android:text="Login"
+        android:text="@string/entrar"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16dp"

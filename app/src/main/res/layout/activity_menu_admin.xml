@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuAdminActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha=".25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logotipo" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnClube"
+        android:layout_width="140dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_button_menu"
+        android:text="@string/clube_desconto"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCadastrar" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPedidoAndamento"
+        android:layout_width="140dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_button_menu"
+        android:text="@string/pedidos_andamento"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnClube"
+        app:layout_constraintTop_toBottomOf="@+id/btnRealizarPedido" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/menu"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCadastrar"
+        android:layout_width="140dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/bg_button_menu"
+        android:onClick="cadastrarUsuario"
+        android:text="@string/cadastrar_usuario"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRealizarPedido"
+        android:layout_width="140dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_button_menu"
+        android:text="@string/realizar_pedido"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnClube"
+        app:layout_constraintTop_toTopOf="@+id/btnCadastrar" />
+
+    <ImageView
+        android:id="@+id/imgEN"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="100dp"
+        android:onClick="idiomaEN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgPT"
+        app:srcCompat="@drawable/en" />
+
+    <ImageView
+        android:id="@+id/imgPT"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="10dp"
+        android:onClick="idiomaPT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/pt" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

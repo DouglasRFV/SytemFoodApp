@@ -11,9 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SystemFoodApp">
-        <activity android:name=".ClienteDescontoActivity"></activity>
+        <activity android:name=".MenuAdminActivity"></activity>
+        <activity android:name=".ClienteDescontoActivity" />
         <activity android:name=".CadastroActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MenuActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>

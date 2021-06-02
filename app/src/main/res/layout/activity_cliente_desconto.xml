@@ -15,7 +15,7 @@
         android:layout_marginBottom="20px"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Nome" />
+        android:hint="@string/nomeCliente" />
 
     <EditText
         android:id="@+id/editCpf"
@@ -24,7 +24,7 @@
         android:layout_marginBottom="20px"
         android:ems="10"
         android:inputType="number"
-        android:hint="CPF" />
+        android:hint="@string/cpfCliente" />
 
     <ListView
         android:id="@+id/listV_dados"

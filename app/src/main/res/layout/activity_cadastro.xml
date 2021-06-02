@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edit_usuario"
+        android:id="@+id/edit_login"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -26,7 +26,7 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/bg_edittext_normal"
         android:ems="10"
-        android:hint="Nome de Usuário"
+        android:hint="@string/login"
         android:imeOptions="actionDone"
         android:inputType="textPersonName"
         android:paddingStart="18dp"
@@ -44,7 +44,7 @@
         android:layout_marginBottom="30dp"
         android:background="@drawable/bg_edittext_normal"
         android:ems="10"
-        android:hint="Senha"
+        android:hint="@string/senha"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:paddingStart="18dp"
@@ -61,7 +61,7 @@
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/bg_button_salvar"
-        android:text="Salvar"
+        android:text="@string/salvar"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16dp"
@@ -71,7 +71,7 @@
         android:id="@+id/tipo_Usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tipo de Usuário:"
+        android:text="@string/tipo_usuario"
         android:textStyle="bold"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="10dp"
@@ -93,14 +93,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:text="Administrador" />
+            android:text="@string/administrador" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
-            android:text="Gerente" />
+            android:text="@string/usuario" />
 
     </RadioGroup>
 
