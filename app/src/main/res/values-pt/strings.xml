@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name" translatable="false">SystemFood</string>
-    <string name="login" translatable="false">Login</string>
     <string name="senha">Senha</string>
     <string name="salvar">Salvar</string>
     <string name="tipo_usuario">Tipo de Usuário:</string>
@@ -9,7 +7,6 @@
     <string name="nomeCliente">Nome</string>
     <string name="cpfCliente">CPF</string>
     <string name="entrar">Entrar</string>
-    <string name="menu" translatable="false">MENU</string>
     <string name="clube_desconto">Clube de Desconto</string>
     <string name="pedidos_andamento">Pedidos em Andamento</string>
     <string name="realizar_pedido">Realizar Pedido</string>

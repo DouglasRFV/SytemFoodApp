@@ -18,7 +18,7 @@ public class CadastroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-        edit_usuario = (AppCompatEditText) findViewById(R.id.edit_usuario);
+        edit_usuario = (AppCompatEditText) findViewById(R.id.edit_login);
         edit_senha = (AppCompatEditText) findViewById(R.id.edit_senha);
 
         btn_salvar = (Button) findViewById(R.id.btn_salvar);
