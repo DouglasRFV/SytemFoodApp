@@ -6,6 +6,16 @@ public class Cliente {
     private String nome;
     private String cpf;
 
+    public String getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(String quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    private String quantidade;
+
     public Cliente() {
     }
 
