@@ -55,4 +55,9 @@ public class MenuActivity extends AppCompatActivity {
         Intent tela = new Intent(this, ClubeDescontoActivity.class);
         startActivity(tela);
     }
+
+    public void fazerPedido (View v) {
+        Intent tela = new Intent(this, PedidosActivity.class);
+        startActivity(tela);
+    }
 }

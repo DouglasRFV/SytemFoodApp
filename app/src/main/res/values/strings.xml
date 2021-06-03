@@ -14,4 +14,6 @@
     <string name="pedidos_andamento">Pedidos em Andamento</string>
     <string name="realizar_pedido">Realizar Pedido</string>
     <string name="cadastrar_usuario">Cadastrar Usuário</string>
+    <string name="quantDesc">Quantidade de Compras</string>
+    <string name="pedidos">PEDIDOS</string>
 </resources>

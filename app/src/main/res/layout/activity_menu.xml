@@ -70,6 +70,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/bg_button_menu"
+        android:onClick="fazerPedido"
         android:text="@string/realizar_pedido"
         android:textAllCaps="false"
         android:textColor="@color/white"

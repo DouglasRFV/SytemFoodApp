@@ -11,4 +11,6 @@
     <string name="pedidos_andamento">Orders in Progress</string>
     <string name="realizar_pedido">Place Order</string>
     <string name="cadastrar_usuario">Register User</string>
+    <string name="quantDesc">Purchase Quantity</string>
+    <string name="pedidos">ORDERS</string>
 </resources>

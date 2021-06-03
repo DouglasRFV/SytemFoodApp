@@ -26,7 +26,7 @@ import java.util.UUID;
 
 public class ClubeDescontoActivity extends AppCompatActivity {
 
-    EditText editNome, editEmail;
+    EditText editNome, editCPF, editQuantidade;
     ListView listV_dados;
 
     FirebaseDatabase firebaseDatabase;
@@ -41,8 +41,9 @@ public class ClubeDescontoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clube_desconto);
-        editEmail = (EditText)findViewById(R.id.editCpf);
         editNome = (EditText)findViewById(R.id.editNome);
+        editCPF = (EditText)findViewById(R.id.editCpf);
+        editQuantidade = (EditText)findViewById(R.id.editQuantidade);
         listV_dados = (ListView)findViewById(R.id.listV_dados);
 
         inicializarFirebase();
@@ -53,7 +54,8 @@ public class ClubeDescontoActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 clienteSelecionado = (Cliente)parent.getItemAtPosition(position);
                 editNome.setText(clienteSelecionado.getNome());
-                editEmail.setText(clienteSelecionado.getCpf());
+                editCPF.setText(clienteSelecionado.getCpf());
+                editQuantidade.setText(clienteSelecionado.getQuantidade());
             }
         });
     }
@@ -101,14 +103,16 @@ public class ClubeDescontoActivity extends AppCompatActivity {
             Cliente c = new Cliente();
             c.setUid(UUID.randomUUID().toString());
             c.setNome(editNome.getText().toString());
-            c.setCpf(editEmail.getText().toString());
+            c.setCpf(editCPF.getText().toString());
+            c.setQuantidade(editQuantidade.getText().toString());
             databaseReference.child("Cliente").child(c.getUid()).setValue(c);
             limparCampos();
         } else if(id == R.id.menu_atualiza) {
             Cliente c = new Cliente();
             c.setUid(clienteSelecionado.getUid());
             c.setNome(editNome.getText().toString().trim());
-            c.setCpf(editEmail.getText().toString().trim());
+            c.setQuantidade(editQuantidade.getText().toString().trim());
+            c.setCpf(editCPF.getText().toString().trim());
             databaseReference.child("Cliente").child(c.getUid()).setValue(c);
             limparCampos();
         } else if(id == R.id.menu_deleta) {
@@ -121,7 +125,8 @@ public class ClubeDescontoActivity extends AppCompatActivity {
     }
 
     private void limparCampos() {
-        editEmail.setText("");
+        editCPF.setText("");
         editNome.setText("");
+        editQuantidade.setText("");
     }
 }
