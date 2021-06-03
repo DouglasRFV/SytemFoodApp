@@ -3,6 +3,7 @@ package com.example.systemfoodapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -48,5 +49,10 @@ public class MenuActivity extends AppCompatActivity {
         config.setLocale(lang);
         res.updateConfiguration(config, res.getDisplayMetrics());
         recreate();
+    }
+
+    public void clubeDesconto (View v) {
+        Intent tela = new Intent(this, ClubeDescontoActivity.class);
+        startActivity(tela);
     }
 }

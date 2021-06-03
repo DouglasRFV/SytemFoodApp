@@ -89,18 +89,20 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioAdmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:text="@string/administrador" />
+            android:text="@string/administrador"
+            android:onClick="onRadioButtonClicked"/>
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
-            android:text="@string/usuario" />
+            android:text="@string/usuario"
+            android:onClick="onRadioButtonClicked"/>
 
     </RadioGroup>
 

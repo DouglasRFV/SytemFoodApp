@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -52,6 +51,11 @@ public class MenuAdminActivity extends AppCompatActivity {
 
     public void cadastrarUsuario (View v) {
         Intent tela = new Intent(this, CadastroActivity.class);
+        startActivity(tela);
+    }
+
+    public void clubeDesconto (View v) {
+        Intent tela = new Intent(this, ClubeDescontoActivity.class);
         startActivity(tela);
     }
 }

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class ClienteDescontoActivity extends AppCompatActivity {
+public class ClubeDescontoActivity extends AppCompatActivity {
 
     EditText editNome, editEmail;
     ListView listV_dados;
@@ -40,7 +40,7 @@ public class ClienteDescontoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cliente_desconto);
+        setContentView(R.layout.activity_clube_desconto);
         editEmail = (EditText)findViewById(R.id.editCpf);
         editNome = (EditText)findViewById(R.id.editNome);
         listV_dados = (ListView)findViewById(R.id.listV_dados);
@@ -67,7 +67,7 @@ public class ClienteDescontoActivity extends AppCompatActivity {
                     Cliente c = objSnapshot.getValue(Cliente.class);
                     listCliente.add(c);
                 }
-                arrayAdapterCliente = new ArrayAdapter<Cliente>(ClienteDescontoActivity.this,
+                arrayAdapterCliente = new ArrayAdapter<Cliente>(ClubeDescontoActivity.this,
                         android.R.layout.simple_list_item_1, listCliente);
 
                 listV_dados.setAdapter(arrayAdapterCliente);
@@ -82,7 +82,7 @@ public class ClienteDescontoActivity extends AppCompatActivity {
 
     private void inicializarFirebase() {
 
-        FirebaseApp.initializeApp(ClienteDescontoActivity.this);
+        FirebaseApp.initializeApp(ClubeDescontoActivity.this);
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseDatabase.setPersistenceEnabled(true);
         databaseReference = firebaseDatabase.getReference();
