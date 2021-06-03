@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SystemFoodApp">
         <activity android:name=".MenuAdminActivity"></activity>
-        <activity android:name=".ClienteDescontoActivity" />
+        <activity android:name=".ClubeDescontoActivity" />
         <activity android:name=".CadastroActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".LoginActivity" />

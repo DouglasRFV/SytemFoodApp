@@ -55,6 +55,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="120dp"
         android:background="@drawable/bg_button_menu"
+        android:onClick="clubeDesconto"
         android:text="@string/clube_desconto"
         android:textAllCaps="false"
         android:textColor="@color/white"
