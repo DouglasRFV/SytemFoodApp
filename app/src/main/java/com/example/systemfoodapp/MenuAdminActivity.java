@@ -60,7 +60,7 @@ public class MenuAdminActivity extends AppCompatActivity {
     }
 
     public void fazerPedido (View v) {
-        Intent tela = new Intent(this, PedidosActivity.class);
+        Intent tela = new Intent(this, MesasActivity.class);
         startActivity(tela);
     }
 }

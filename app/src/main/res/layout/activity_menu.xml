@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/logotipo" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnPedidoAndamento"
+        android:id="@+id/btnMesa4"
         android:layout_width="match_parent"
         android:layout_height="110dp"
         android:layout_marginStart="30dp"
@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnClube" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMesa3" />
 
     <TextView
         android:id="@+id/textView"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnClube"
+        android:id="@+id/btnMesa3"
         android:layout_width="135dp"
         android:layout_height="110dp"
         android:layout_marginStart="30dp"
@@ -64,7 +64,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnRealizarPedido"
+        android:id="@+id/btnMesa2"
         android:layout_width="135dp"
         android:layout_height="110dp"
         android:layout_marginStart="30dp"
@@ -76,8 +76,8 @@
         android:textColor="@color/white"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnClube"
-        app:layout_constraintTop_toTopOf="@+id/btnClube" />
+        app:layout_constraintStart_toEndOf="@+id/btnMesa3"
+        app:layout_constraintTop_toTopOf="@+id/btnMesa3" />
 
     <ImageView
         android:id="@+id/imgEN"

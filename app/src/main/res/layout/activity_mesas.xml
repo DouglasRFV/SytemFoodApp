@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuAdminActivity">
+    tools:context=".MesasActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatImageView2"
@@ -18,14 +18,54 @@
         app:srcCompat="@drawable/logotipo" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnMesa6"
+        android:layout_width="140dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/bg_button_login"
+        android:onClick="fazerPedido"
+        android:text="@string/mesa6"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toEndOf="@+id/btnMesa5"
+        app:layout_constraintTop_toBottomOf="@+id/btnMesa4"
+        app:layout_constraintVertical_bias="0.048"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnMesa5"
+        android:layout_width="140dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/bg_button_login"
+        android:onClick="fazerPedido"
+        android:text="@string/mesa5"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMesa3"
+        app:layout_constraintVertical_bias="0.049" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnMesa3"
         android:layout_width="140dp"
         android:layout_height="110dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/bg_button_menu"
-        android:onClick="clubeDesconto"
-        android:text="@string/clube_desconto"
+        android:background="@drawable/bg_button_login"
+        android:onClick="fazerPedido"
+        android:text="@string/mesa3"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="15dp"
@@ -40,8 +80,9 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
-        android:background="@drawable/bg_button_menu"
-        android:text="@string/pedidos_andamento"
+        android:background="@drawable/bg_button_login"
+        android:onClick="fazerPedido"
+        android:text="@string/mesa4"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="15dp"
@@ -56,7 +97,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
-        android:text="@string/menu"
+        android:text="@string/mesas"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,10 +110,10 @@
         android:layout_width="140dp"
         android:layout_height="110dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/bg_button_menu"
-        android:onClick="cadastrarUsuario"
-        android:text="@string/cadastrar_usuario"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bg_button_login"
+        android:onClick="fazerPedido"
+        android:text="@string/mesa1"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="15dp"
@@ -86,35 +127,14 @@
         android:layout_height="110dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:background="@drawable/bg_button_menu"
+        android:background="@drawable/bg_button_login"
         android:onClick="fazerPedido"
-        android:text="@string/realizar_pedido"
+        android:text="@string/mesa2"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnMesa3"
         app:layout_constraintTop_toTopOf="@+id/btnMesa1" />
-
-    <ImageView
-        android:id="@+id/imgEN"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="100dp"
-        android:onClick="idiomaEN"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgPT"
-        app:srcCompat="@drawable/en" />
-
-    <ImageView
-        android:id="@+id/imgPT"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginBottom="10dp"
-        android:onClick="idiomaPT"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/pt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
