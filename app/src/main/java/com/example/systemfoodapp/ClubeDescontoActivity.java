@@ -24,6 +24,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.systemfoodapp.modelo.Cliente;
 import com.example.systemfoodapp.modelo.ClienteAdapter;
+import com.github.rtoshiro.util.format.SimpleMaskFormatter;
+import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -55,6 +57,10 @@ public class ClubeDescontoActivity extends AppCompatActivity {
         editCPF = (EditText) findViewById(R.id.editCpf);
         editQuantidade = (EditText) findViewById(R.id.editQuantidade);
         listV_dados = (ListView) findViewById(R.id.listV_dados);
+
+        SimpleMaskFormatter smf = new SimpleMaskFormatter("NNN.NNN.NNN-NN");
+        MaskTextWatcher mtw = new MaskTextWatcher(editCPF, smf);
+        editCPF.addTextChangedListener(mtw); 
 
         requestQueue = Volley.newRequestQueue(this);
 
