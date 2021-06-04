@@ -29,11 +29,11 @@ public class LancheAdapter extends ArrayAdapter<Lanche> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.linha, parent, false);
 
-        TextView nomeEscola = (TextView) rowView.findViewById(R.id.nome);
+        TextView nomeLanche = (TextView) rowView.findViewById(R.id.nome);
         TextView endereco = (TextView) rowView.findViewById(R.id.endereco);
         ImageView imagem = (ImageView) rowView.findViewById(R.id.imagem);
 
-        nomeEscola.setText(elementos.get(position).getNome());
+        nomeLanche.setText(elementos.get(position).getNome());
         endereco.setText(elementos.get(position).getPreco());
         imagem.setImageResource(elementos.get(position).getImagem());
         return rowView;

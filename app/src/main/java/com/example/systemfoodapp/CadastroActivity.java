@@ -68,7 +68,6 @@ public class CadastroActivity extends AppCompatActivity {
                 }
 
                 if (validado) {
-//                    Toast.makeText(CadastroActivity.this, "Validando seus dados...aguarde.", Toast.LENGTH_SHORT).show();
                     criptografar();
 
                 }

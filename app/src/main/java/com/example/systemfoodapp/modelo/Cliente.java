@@ -2,9 +2,20 @@ package com.example.systemfoodapp.modelo;
 
 public class Cliente {
 
-    private String uid;
+    private String id;
     private String nome;
     private String cpf;
+    private String quantidade;
+
+    public Cliente(String id, String nome, String cpf, String quantidade) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.quantidade = quantidade;
+    }
+
+    public Cliente() {
+    }
 
     public String getQuantidade() {
         return quantidade;
@@ -14,17 +25,12 @@ public class Cliente {
         this.quantidade = quantidade;
     }
 
-    private String quantidade;
-
-    public Cliente() {
+    public String getId() {
+        return id;
     }
 
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setUid(String id) {
+        this.id = id;
     }
 
     public String getNome() {
