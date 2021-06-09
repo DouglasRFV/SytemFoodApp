@@ -113,6 +113,7 @@ public class LoginActivity extends AppCompatActivity {
                                }
                            }
                        } catch (Exception e) {
+                           Toast.makeText(getApplicationContext(), "Dados Inválidos", Toast.LENGTH_LONG).show();
                            Log.v("LogLoginErro", e.getMessage());
                        }
                    }
