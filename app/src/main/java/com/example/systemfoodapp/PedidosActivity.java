@@ -4,10 +4,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +13,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -26,11 +23,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.systemfoodapp.modelo.Lanche;
 import com.example.systemfoodapp.modelo.LancheAdapter;
-import com.example.systemfoodapp.modelo.Pedido;
 
 import org.json.JSONObject;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,7 +33,10 @@ import java.util.Map;
 public class PedidosActivity extends AppCompatActivity {
 
     String urlInsertItem = "http://192.168.0.3/systemfood/insertItemPedido.php";
-    String lanche, quantidade, numeroMesa;
+    String lanche, quantidadeStr, numeroMesa, precoStr;
+    Integer quantlanche;
+    double valorlanche;
+    double preco;
     StringRequest stringRequest;
     RequestQueue requestQueue;
 
@@ -62,33 +60,43 @@ public class PedidosActivity extends AppCompatActivity {
                 numeroMesa = dadosPedido.getString("numeroMesa", "0");
                 if(selectedItem == 0) {
                     lanche = "1";
+                    preco = 40.00;
                     confirmaQuantidade();
                 } else if(selectedItem == 1) {
                     lanche = "2";
+                    preco = 35.00;
                     confirmaQuantidade();
                 } else if(selectedItem == 2) {
                     lanche = "3";
+                    preco = 50.00;
                     confirmaQuantidade();
                 } else if(selectedItem == 3) {
                     lanche = "4";
+                    preco = 25.00;
                     confirmaQuantidade();
                 } else if(selectedItem == 4) {
                     lanche = "5";
+                    preco = 55.00;
                     confirmaQuantidade();
                 } else if(selectedItem == 5) {
                     lanche = "6";
+                    preco = 35.00;
                     confirmaQuantidade();
                 } else if(selectedItem == 6) {
                     lanche = "7";
+                    preco = 35.00;
                     confirmaQuantidade();
                 } else if(selectedItem == 7) {
                     lanche = "8";
+                    preco = 55.00;
                     confirmaQuantidade();
                 } else if(selectedItem == 8) {
                     lanche = "9";
+                    preco = 65.00;
                     confirmaQuantidade();
                 } else if(selectedItem == 9) {
                     lanche = "10";
+                    preco = 50.00;
                     confirmaQuantidade();
                 }
             }
@@ -108,11 +116,15 @@ public class PedidosActivity extends AppCompatActivity {
         msgBox.setPositiveButton("Confirma", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                quantidade = input.getText().toString();
+                quantidadeStr = input.getText().toString();
+                quantlanche = Integer.parseInt(quantidadeStr);
+                valorlanche = (preco * quantlanche);
+                precoStr = String.valueOf(valorlanche);
                 System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
                 System.out.println("NÚMERO MESA " + numeroMesa);
                 System.out.println("LANCHE " + lanche);
-                System.out.println("QUANTIDADE " + quantidade);
+                System.out.println("QUANTIDADE " + quantidadeStr);
+                System.out.println("PREÇO " + preco);
                 System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
                 salvarItemPedido();
             }
@@ -185,7 +197,8 @@ public class PedidosActivity extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("idMesa", numeroMesa);
                 params.put("idLanche", lanche);
-                params.put("quantidade", quantidade);
+                params.put("quantidade", quantidadeStr);
+                params.put("preco", precoStr);
                 return params;
             }
         };
