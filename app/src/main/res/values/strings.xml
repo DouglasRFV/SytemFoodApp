@@ -26,4 +26,6 @@
     <string name="itensAndamento">ITENS DO PEDIDO</string>
     <string name="totalComDesconto">TOTAL C/ DESCONTO</string>
     <string name="totalSemDesconto" translatable="false">TOTAL</string>
+    <string name="desenvolvidoPor">Desenvolvido por:</string>
+    <string name="sobre">Sobre</string>
 </resources>

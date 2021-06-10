@@ -68,4 +68,9 @@ public class MenuAdminActivity extends AppCompatActivity {
         Intent tela = new Intent(this, PedidosAndamentoActivity.class);
         startActivity(tela);
     }
+
+    public void sobre (View v) {
+        Intent tela = new Intent(this, SobreActivity.class);
+        startActivity(tela);
+    }
 }
