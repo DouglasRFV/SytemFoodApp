@@ -1,26 +1,129 @@
 package com.example.systemfoodapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.renderscript.ScriptGroup;
+import android.text.InputType;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.systemfoodapp.modelo.Lanche;
 import com.example.systemfoodapp.modelo.LancheAdapter;
+import com.example.systemfoodapp.modelo.Pedido;
 
+import org.json.JSONObject;
+
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PedidosActivity extends AppCompatActivity {
+
+    String urlInsertItem = "http://192.168.0.3/systemfood/insertItemPedido.php";
+    String lanche, quantidade, numeroMesa;
+    StringRequest stringRequest;
+    RequestQueue requestQueue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedidos);
 
+        requestQueue = Volley.newRequestQueue(this);
+
         ListView lista = (ListView) findViewById(R.id.listLanches);
         ArrayAdapter adapter = new LancheAdapter(this, adicionarLanches());
         lista.setAdapter(adapter);
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Long selectedItem = (Long) parent.getItemIdAtPosition(position);
+                SharedPreferences dadosPedido = getSharedPreferences("dadosMesa", MODE_PRIVATE);
+                numeroMesa = dadosPedido.getString("numeroMesa", "0");
+                if(selectedItem == 0) {
+                    lanche = "1";
+                    confirmaQuantidade();
+                } else if(selectedItem == 1) {
+                    lanche = "2";
+                    confirmaQuantidade();
+                } else if(selectedItem == 2) {
+                    lanche = "3";
+                    confirmaQuantidade();
+                } else if(selectedItem == 3) {
+                    lanche = "4";
+                    confirmaQuantidade();
+                } else if(selectedItem == 4) {
+                    lanche = "5";
+                    confirmaQuantidade();
+                } else if(selectedItem == 5) {
+                    lanche = "6";
+                    confirmaQuantidade();
+                } else if(selectedItem == 6) {
+                    lanche = "7";
+                    confirmaQuantidade();
+                } else if(selectedItem == 7) {
+                    lanche = "8";
+                    confirmaQuantidade();
+                } else if(selectedItem == 8) {
+                    lanche = "9";
+                    confirmaQuantidade();
+                } else if(selectedItem == 9) {
+                    lanche = "10";
+                    confirmaQuantidade();
+                }
+            }
+        });
+    }
+
+    private void confirmaQuantidade() {
+        AlertDialog.Builder msgBox = new AlertDialog.Builder(this);
+        msgBox.setTitle("Quantidade...");
+        msgBox.setMessage("Informe a quantidade desejada?");
+
+        final EditText input = new EditText(PedidosActivity.this);
+        input.setInputType(InputType.TYPE_CLASS_NUMBER);
+        msgBox.setView(input);
+
+
+        msgBox.setPositiveButton("Confirma", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                quantidade = input.getText().toString();
+                System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+                System.out.println("NÚMERO MESA " + numeroMesa);
+                System.out.println("LANCHE " + lanche);
+                System.out.println("QUANTIDADE " + quantidade);
+                System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+                salvarItemPedido();
+            }
+        });
+        msgBox.setNegativeButton("Cancela", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        msgBox.show();
     }
 
     private ArrayList<Lanche> adicionarLanches() {
@@ -46,5 +149,46 @@ public class PedidosActivity extends AppCompatActivity {
         e = new Lanche("Lanche 10", R.drawable.lanche10, "R$50,00");
         lanches.add(e);
         return lanches;
+    }
+
+    private void salvarItemPedido() {
+
+        stringRequest = new StringRequest(Request.Method.POST, urlInsertItem,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+
+                            boolean isErro = jsonObject.getBoolean("erro");
+
+                            if(isErro) {
+                                Toast.makeText(getApplicationContext(), "Pedido não efetuado", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Pedido efetuado", Toast.LENGTH_LONG).show();
+                            }
+                        } catch (Exception e) {
+                            Toast.makeText(getApplicationContext(), "Dados Inválidos", Toast.LENGTH_LONG).show();
+                            Log.v("LogLoginErro", e.getMessage());
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        String err = (error.getMessage()==null)?"Sem mensagem de erro":error.getMessage();
+                        Log.e("LogLogin", err);
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("idMesa", numeroMesa);
+                params.put("idLanche", lanche);
+                params.put("quantidade", quantidade);
+                return params;
+            }
+        };
+        requestQueue.add(stringRequest);
     }
 }

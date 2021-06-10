@@ -20,4 +20,6 @@
     <string name="mesa5">Table 5</string>
     <string name="mesa6">Table 6</string>
     <string name="mesas">TABLES</string>
+    <string name="itensAndamento">ORDERS ITENS</string>
+    <string name="totalComDesconto">WITH DISCOUNT</string>
 </resources>

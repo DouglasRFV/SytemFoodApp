@@ -60,4 +60,9 @@ public class MenuActivity extends AppCompatActivity {
         Intent tela = new Intent(this, PedidosActivity.class);
         startActivity(tela);
     }
+
+    public void listarPedido (View v) {
+        Intent tela = new Intent(this, PedidosAndamentoActivity.class);
+        startActivity(tela);
+    }
 }

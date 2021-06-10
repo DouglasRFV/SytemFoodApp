@@ -101,6 +101,7 @@ public class ClubeDescontoActivity extends AppCompatActivity {
                                 objCliente.getString("quantidade")
                         );
                         clientes.add(c);
+                        System.out.println(clientes.get(i));
                     }
                 } catch (Exception e) {
                     Log.v("LogLoginErro", e.getMessage());
@@ -115,6 +116,7 @@ public class ClubeDescontoActivity extends AppCompatActivity {
             }
         }) {};
         requestQueue.add(stringRequest);
+        Log.v("VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI", String.valueOf(clientes));
         return clientes;
     }
 

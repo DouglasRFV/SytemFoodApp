@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PedidosAndamentoActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_mesa4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/bg_button_login"
+        android:text="@string/mesa4"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_mesa5" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_mesa6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_button_login"
+        android:text="@string/mesa6"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_mesa5" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_mesa5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_button_login"
+        android:text="@string/mesa5"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/btn_mesa6"
+        app:layout_constraintStart_toEndOf="@+id/btn_mesa4"
+        app:layout_constraintTop_toBottomOf="@+id/btn_mesa2"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_mesa2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_button_login"
+        android:text="@string/mesa2"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/btn_mesa3"
+        app:layout_constraintStart_toEndOf="@+id/btn_mesa1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_mesa1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/bg_button_login"
+        android:text="@string/mesa1"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_mesa2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_mesa3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_button_login"
+        android:text="@string/mesa3"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_mesa2" />
+
+    <ListView
+        android:id="@+id/list_pedidos_andamento"
+        android:layout_width="345dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_mesa5" />
+
+    <TextView
+        android:id="@+id/titleTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/totalComDesconto"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="0.00"
+        android:textColor="@color/teal_700"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/titleTotal"
+        app:layout_constraintStart_toEndOf="@+id/titleTotal"
+        app:layout_constraintTop_toTopOf="@+id/titleTotal" />
+
+    <TextView
+        android:id="@+id/titleTotalSemDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/totalSemDesconto"
+        app:layout_constraintBottom_toTopOf="@+id/titleTotal"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTotalSemDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:text="0.00"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/titleTotalSemDesc"
+        app:layout_constraintStart_toEndOf="@+id/titleTotalSemDesc"
+        app:layout_constraintTop_toTopOf="@+id/titleTotalSemDesc"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
