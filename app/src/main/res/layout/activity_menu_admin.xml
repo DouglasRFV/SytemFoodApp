@@ -18,6 +18,19 @@
         app:srcCompat="@drawable/logotipo" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_mesa1"
+        android:layout_width="78dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_button_login"
+        android:onClick="sobre"
+        android:text="@string/sobre"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnMesa3"
         android:layout_width="140dp"
         android:layout_height="110dp"

@@ -38,7 +38,7 @@ import java.util.concurrent.TimeUnit;
 
 public class PedidosAndamentoActivity extends AppCompatActivity {
 
-    String numeroMesa;
+    String numeroMesa, temDesconto;
     ListView listpedidos_andamento;
     Button mesa1, mesa2, mesa3, mesa4, mesa5, mesa6;
     TextView total, totalSemDesc;
@@ -72,60 +72,54 @@ public class PedidosAndamentoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 numeroMesa = "1";
-                adapter = new PedidoAndamentoAdapter(PedidosAndamentoActivity.this, listarItensPedido());
-                listpedidos_andamento.setAdapter(adapter);
-//                calcularDesconto();
-//                getValoresPedido();
+                confirmDesconto();
+//                adapter = new PedidoAndamentoAdapter(PedidosAndamentoActivity.this, listarItensPedido());
+//                listpedidos_andamento.setAdapter(adapter);
             }
         });
         mesa2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 numeroMesa = "2";
-                adapter = new PedidoAndamentoAdapter(PedidosAndamentoActivity.this, listarItensPedido());
-                listpedidos_andamento.setAdapter(adapter);
-//                calcularDesconto();
-//                getValoresPedido();
+                confirmDesconto();
+//                adapter = new PedidoAndamentoAdapter(PedidosAndamentoActivity.this, listarItensPedido());
+//                listpedidos_andamento.setAdapter(adapter);
             }
         });
         mesa3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 numeroMesa = "3";
-                adapter = new PedidoAndamentoAdapter(PedidosAndamentoActivity.this, listarItensPedido());
-                listpedidos_andamento.setAdapter(adapter);
-//                calcularDesconto();
-//                getValoresPedido();
+                confirmDesconto();
+//                adapter = new PedidoAndamentoAdapter(PedidosAndamentoActivity.this, listarItensPedido());
+//                listpedidos_andamento.setAdapter(adapter);
             }
         });
         mesa4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 numeroMesa = "4";
-                adapter = new PedidoAndamentoAdapter(PedidosAndamentoActivity.this, listarItensPedido());
-                listpedidos_andamento.setAdapter(adapter);
-//                calcularDesconto();
-//                getValoresPedido();
+                confirmDesconto();
+//                adapter = new PedidoAndamentoAdapter(PedidosAndamentoActivity.this, listarItensPedido());
+//                listpedidos_andamento.setAdapter(adapter);
             }
         });
         mesa5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 numeroMesa = "5";
-                adapter = new PedidoAndamentoAdapter(PedidosAndamentoActivity.this, listarItensPedido());
-                listpedidos_andamento.setAdapter(adapter);
-//                calcularDesconto();
-//                getValoresPedido();
+                confirmDesconto();
+//                adapter = new PedidoAndamentoAdapter(PedidosAndamentoActivity.this, listarItensPedido());
+//                listpedidos_andamento.setAdapter(adapter);
             }
         });
         mesa6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 numeroMesa = "6";
-                adapter = new PedidoAndamentoAdapter(PedidosAndamentoActivity.this, listarItensPedido());
-                listpedidos_andamento.setAdapter(adapter);
-//                calcularDesconto();
-//                getValoresPedido();
+                confirmDesconto();
+//                adapter = new PedidoAndamentoAdapter(PedidosAndamentoActivity.this, listarItensPedido());
+//                listpedidos_andamento.setAdapter(adapter);
             }
         });
     }
@@ -257,6 +251,30 @@ public class PedidosAndamentoActivity extends AppCompatActivity {
         startActivity(getIntent());
     }
 
+    private void confirmDesconto() {
+        AlertDialog.Builder msgBox = new AlertDialog.Builder(this);
+        msgBox.setTitle("Desconto...");
+        msgBox.setIcon(android.R.drawable.ic_menu_delete);
+        msgBox.setMessage("Cliente tem direito a desconto?");
+        msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                temDesconto = "1";
+                adapter = new PedidoAndamentoAdapter(PedidosAndamentoActivity.this, listarItensPedido());
+                listpedidos_andamento.setAdapter(adapter);
+            }
+        });
+        msgBox.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                temDesconto = "0";
+                adapter = new PedidoAndamentoAdapter(PedidosAndamentoActivity.this, listarItensPedido());
+                listpedidos_andamento.setAdapter(adapter);
+            }
+        });
+        msgBox.show();
+    }
+
     private void calcularDesconto() {
 
         stringRequest = new StringRequest(Request.Method.POST, urlCalculaDesconto,
@@ -270,7 +288,7 @@ public class PedidosAndamentoActivity extends AppCompatActivity {
                             boolean isErro = jsonObject.getBoolean("erro");
 
                             if(isErro) {
-                                Toast.makeText(getApplicationContext(), "Erro ao calcular desconto!", Toast.LENGTH_LONG).show();
+//                                Toast.makeText(getApplicationContext(), "MESA SEM PEDIDOS!", Toast.LENGTH_LONG).show();
                             }
                         } catch (Exception e) {
                             Log.v("LogLoginErro", e.getMessage());
@@ -288,6 +306,7 @@ public class PedidosAndamentoActivity extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("idMesa", numeroMesa);
+                params.put("temDesconto", temDesconto);
                 return params;
             }
         };

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SystemFoodApp">
-        <activity android:name=".PedidosAndamentoActivity"></activity>
+        <activity android:name=".SobreActivity"></activity>
+        <activity android:name=".PedidosAndamentoActivity" />
         <activity android:name=".MesasActivity" />
         <activity android:name=".PedidosActivity" />
         <activity android:name=".MenuAdminActivity" />
