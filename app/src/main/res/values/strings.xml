@@ -24,4 +24,6 @@
     <string name="mesa5">Mesa 5</string>
     <string name="mesa6">Mesa 6</string>
     <string name="itensAndamento">ITENS DO PEDIDO</string>
+    <string name="totalComDesconto">TOTAL C/ DESCONTO</string>
+    <string name="totalSemDesconto" translatable="false">TOTAL</string>
 </resources>
